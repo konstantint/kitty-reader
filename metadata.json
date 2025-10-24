@@ -1,0 +1,5 @@
+{
+  "name": "Kitty Reader",
+  "description": "An interactive application to help young children learn to read by breaking down text into syllables and guiding them with a friendly kitty character.",
+  "requestFramePermissions": []
+}
