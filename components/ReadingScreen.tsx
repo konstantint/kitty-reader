@@ -106,14 +106,26 @@ const ReadingScreen: React.FC<ReadingScreenProps> = ({ processedText, onBack }) 
         {processedText.map((word) => (
           <div
             key={word.id}
-            ref={el => el ? wordRefs.current.set(word.id, el) : wordRefs.current.delete(word.id)}
+            ref={el => {
+              if (el) {
+                wordRefs.current.set(word.id, el);
+              } else {
+                wordRefs.current.delete(word.id);
+              }
+            }}
             className={`relative mx-4 transition-all duration-500 ease-in-out p-4 rounded-2xl ${word.id === currentWord?.id ? 'bg-amber-200/80' : 'bg-transparent'}`}
           >
             <h2 className="text-8xl font-bold tracking-widest text-slate-700">
               {word.syllables.map((syllable, index) => (
                 <span
                   key={syllable.id}
-                  ref={el => el ? syllableRefs.current.set(syllable.id, el) : syllableRefs.current.delete(syllable.id)}
+                  ref={el => {
+                    if (el) {
+                      syllableRefs.current.set(syllable.id, el);
+                    } else {
+                      syllableRefs.current.delete(syllable.id);
+                    }
+                  }}
                   className="inline-block"
                 >
                   {syllable.text}
