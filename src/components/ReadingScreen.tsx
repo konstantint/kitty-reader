@@ -154,8 +154,24 @@ const ReadingScreen: React.FC<ReadingScreenProps> = ({ processedText, onBack }) 
         </div>
       </div>
 
-      <div className="absolute bottom-8 text-slate-500 text-lg">
-        Use <kbd className="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg">←</kbd> and <kbd className="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg">→</kbd> arrow keys to read.
+      <div className="absolute bottom-8 text-slate-500 text-xl flex items-center gap-3">
+        Use
+        <button
+          onClick={prevSyllable}
+          className="px-5 py-2 text-3xl font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-gray-200 active:scale-95 transition-transform"
+          aria-label="Previous syllable"
+        >
+          ←
+        </button>
+        &
+        <button
+          onClick={nextSyllable}
+          className="px-5 py-2 text-3xl font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-gray-200 active:scale-95 transition-transform"
+          aria-label="Next syllable"
+        >
+          →
+        </button>
+        keys or buttons to read.
       </div>
     </div>
   );
