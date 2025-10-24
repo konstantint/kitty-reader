@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from 'react';
 import SetupScreen from './components/SetupScreen';
 import ReadingScreen from './components/ReadingScreen';
@@ -14,20 +13,25 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [rawText, setRawText] = useState<string>('Привет, как дела? Меня зовут Котёнок. Давай читать вместе!');
 
-  const handleStartReading = useCallback(async (text: string) => {
+  const handleStartReading = useCallback((text: string) => {
     setIsLoading(true);
     setError(null);
     setRawText(text);
-    try {
-      const result = await syllabifyText(text);
-      setProcessedText(result);
-      setAppState('reading');
-    } catch (e) {
-      setError('Could not process the text. Please check your API key and try again.');
-      console.error(e);
-    } finally {
-      setIsLoading(false);
-    }
+
+    // Using a timeout to ensure the loading spinner is visible for a moment,
+    // providing better user feedback even for a fast synchronous operation.
+    setTimeout(() => {
+      try {
+        const result = syllabifyText(text);
+        setProcessedText(result);
+        setAppState('reading');
+      } catch (e) {
+        setError('Could not process the text. An unexpected error occurred.');
+        console.error(e);
+      } finally {
+        setIsLoading(false);
+      }
+    }, 50); // A small delay for UX
   }, []);
 
   const handleGoBack = useCallback(() => {
