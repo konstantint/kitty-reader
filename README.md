@@ -1,20 +1,35 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Kitty Reader
 
-# Run and deploy your AI Studio app
+An interactive application to help young children learn to read by breaking down text into syllables and guiding them with a friendly kitty character.
 
-This contains everything you need to run your app locally.
+This project was bootstrapped with Vite and uses React, TypeScript, and Tailwind CSS.
 
-View your app in AI Studio: https://aistudio-preprod.corp.google.com/apps/drive/1ZMnKULGMzxkSUGrwNyi-IAhlaCechVyI?resourceKey=0-7pLrtpBIB_PFD_UVdc6LNg
+## Project Setup
 
-## Run Locally
+### Prerequisites
 
-**Prerequisites:**  Node.js
+- [Node.js](https://nodejs.org/) (version 18.x or newer recommended)
+- npm (comes with Node.js)
 
+### Installation
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1.  Clone the repository or download the source code.
+2.  Navigate to the project directory in your terminal.
+3.  Install the required dependencies:
+    ```bash
+    npm install
+    ```
+
+## Available Scripts
+
+### `npm run dev`
+
+Runs the app in development mode. Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
+
+The page will reload when you make changes.
+
+### `npm run build`
+
+Builds the app for production to the `dist/` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include hashes. Your app is ready to be deployed! You can upload the contents of the `dist/` directory to any static hosting service like GitHub Pages, Vercel, or Netlify.
