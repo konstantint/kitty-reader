@@ -42,10 +42,11 @@ The application is built to be a standalone, client-side tool with no backend or
         -   **Left Arrow (`←`)**: Moves the kitty to the previous syllable.
             -   If the previous syllable is in the same word, the kitty jumps to it.
             -   If the previous syllable is at the start of the current word, the word highlight and scroll position update to the previous word, and the kitty jumps to the last syllable of that previous word.
+    -   **On-Screen Buttons**: To support touch devices, two large, tappable on-screen buttons displaying '←' and '→' are provided. Tapping these buttons performs the same action as pressing the corresponding arrow keys (moving to the previous or next syllable).
     -   **Kitty Animation**: When moving between syllables, the kitty performs a smooth, curved "jump" animation. The height and trajectory of the jump are calculated to feel natural. The animation is handled using the Web Animations API for performance.
 -   **Controls**:
     -   **Back Button**: A clearly visible "Back" button (using an arrow icon) is present in the top-left corner, allowing the user to return to the Setup Screen. This preserves the last entered text.
-    -   **Instructional Text**: A small, non-intrusive text element at the bottom of the screen reminds the user to use the arrow keys.
+    -   **Instructional Text**: A non-intrusive text element at the bottom of the screen reminds the user to use the arrow keys or tap the on-screen buttons.
 
 ## 3. Technical Specification
 
